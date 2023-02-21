@@ -1,0 +1,34 @@
+{
+  "name": "go-green",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.10",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^3.1.2",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.17.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^6.1.1",
+    "is-any-type": "0.0.4",
+    "jest": "^27.5.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.6.0",
+    "supertest": "^6.2.2"
+  }
+}
