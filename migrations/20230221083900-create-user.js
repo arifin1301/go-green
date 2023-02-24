@@ -23,7 +23,7 @@ module.exports = {
       },
       google_id: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       avatar: {
         type: Sequelize.STRING,

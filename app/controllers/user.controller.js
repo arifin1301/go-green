@@ -1,11 +1,11 @@
-const { User, Task } = require('../../models')
+const { user } = require('../../models')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 const signUp = async (req, res) => {
     try {
         req.body.password = bcrypt.hashSync(req.body.password, 8)
-        const data = await User.create(req.body)
+        const data = await user.create(req.body)
         return res.status(201).json({
             msg: "success sign up",
             data: {
@@ -22,7 +22,7 @@ const signUp = async (req, res) => {
 
 const signIn = async (req, res) => {
     try {
-        const user = await User.findOne({
+        user.findOne({
             where: { email: req.body.email }
         })
             .then(user => {
