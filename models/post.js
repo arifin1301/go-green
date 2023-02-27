@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
       post.belongsTo(models.user, {
         foreignKey: 'id_user'
       })
+
+      post.hasMany(models.bookmark, {
+        foreignKey: 'id_post'
+      })
+
     }
   }
   post.init({

@@ -6,10 +6,11 @@ require('dotenv').config()
 module.exports = (express, app, default_router) => {
     const router = express.Router()
 
-    router.get('/tasks', PostController.getAllPost)
-    router.post('/tasks', PostController.createPost)
-    router.put('/tasks/:id', PostController.updatePost)
-    router.delete('/tasks/:id', PostController.deletePost)
+    router.get('/posts', PostController.getAllPost)
+    router.get('/posts/:id', PostController.getDetailPost)
+    router.post('/posts', PostController.createPost)
+    router.put('/posts/:id', PostController.updatePost)
+    router.delete('/posts/:id', PostController.deletePost)
 
     app.use(default_router, router)
 }

@@ -7,6 +7,7 @@ module.exports = (express, app, default_router = '/api') => {
     // auth
     router.post('/signup', UserController.signUp)
     router.post('/signin', UserController.signIn)
+    router.patch('/user/poin')
 
 
 

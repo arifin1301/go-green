@@ -3,13 +3,7 @@ const { post, user } = require('../../models')
 //ambil semua data post
 const getAllPost = async (req, res) => {
     try {
-        const data = await post.findAll({
-            include: [
-                {
-                    model: user
-                }
-            ]
-        })
+        const data = await post.findAll()
         return res.status(200).json({
             msg: 'Succes retrive the post',
             data
@@ -19,6 +13,21 @@ const getAllPost = async (req, res) => {
             msg: error.message
         })
     }
+}
+
+const getDetailPost = async (req, res) => {
+    const { id } = req.params
+    const data = await post.findOne({ where: { id: id } })
+    if (data === null) {
+        return res.status(400).json({
+            msg: 'postingan tidak tersedia'
+        })
+    }
+
+    res.status(200).json({
+        msg: "data berhasil ditemukan",
+        data
+    })
 }
 
 //menambahkan post
@@ -81,5 +90,6 @@ module.exports = {
     getAllPost,
     createPost,
     updatePost,
-    deletePost
+    deletePost,
+    getDetailPost
 }

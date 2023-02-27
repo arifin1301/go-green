@@ -115,6 +115,29 @@ const updateUser = async (req, res) => {
     }
 }
 
+const addPoint = async (req, res) => {
+    const { point } = req.params
+    try {
+        const data = await user.update({ point: point }, {
+            where: {
+                //tinggal id user
+            }
+        })
+        if (!data) {
+            return res.status(400).json({
+                msg: 'data tidak tersedia'
+            })
+        }
+        res.status(200).json({
+            msg: 'point berhasil di tambahkan'
+        })
+    } catch (error) {
+        return res.status(500).json({
+            msg: error.message
+        })
+    }
+}
+
 module.exports = {
     signUp,
     signIn,
