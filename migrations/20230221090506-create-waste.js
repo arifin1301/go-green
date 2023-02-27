@@ -18,7 +18,7 @@ module.exports = {
         allowNull: false
       },
       longitude: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       status: {
