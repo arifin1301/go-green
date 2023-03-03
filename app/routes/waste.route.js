@@ -6,6 +6,7 @@ module.exports = (express, app, default_router) => {
 
     router.post('/waste/recycle', wasteContoller.createWasteRecyle)
     router.post('/waste/trash', wasteContoller.createWasteTrash)
+    router.post('/waste/analyze', wasteContoller.analyzeWaste)
 
     app.use(default_router, router)
 }

@@ -32,6 +32,21 @@ const createWasteTrash = async (req, res) => {
         })
     }
 }
+const analyzeWaste = async (req, res) => {
+    try {
+        return res.status(201).json({
+            msg: 'succes create waste trash',
+            data: {
+                organic: 80,
+                non_organic: 20,
+            }
+        })
+    } catch (error) {
+        return res.status(500).json({
+            msg: error.message
+        })
+    }
+}
 
 
-module.exports = { createWasteRecyle, createWasteTrash }
+module.exports = { createWasteRecyle, createWasteTrash, analyzeWaste }
