@@ -4,7 +4,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const logger = require('morgan')
 require('dotenv').config()
-const UserController = require('./app/Controllers/user.controller.js')
+// const UserController = require('./app/Controllers/user.controller.js')
 
 app.use(cors())
 app.use(bodyParser.json())
